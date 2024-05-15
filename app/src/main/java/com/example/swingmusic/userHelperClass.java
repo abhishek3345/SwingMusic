@@ -15,13 +15,6 @@ public class userHelperClass {
         this.password = password;
     }
 
-    //SignUp Constructor
-    public userHelperClass(String username, String email, String phoneNo, String password) {
-        this.username = username;
-        this.email = email;
-        this.phoneNo = phoneNo;
-        this.password = password;
-    }
 
     public String getName() {
         return name;

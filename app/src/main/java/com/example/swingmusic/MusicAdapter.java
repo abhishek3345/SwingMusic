@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +18,22 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder>
     private Context mContext;
     private ArrayList<MusicFiles> mFiles;
 
+    private OnItemClickListener mListener;
+
+
     public MusicAdapter(Context mContext, ArrayList<MusicFiles> mFiles){
         this.mFiles = mFiles;
         this.mContext = mContext;
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
 
     @NonNull
     @Override
@@ -39,7 +52,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder>
         return mFiles.size();
     }
 
-    public class MyVieHolder extends RecyclerView.ViewHolder{
+    public class MyVieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView file_name;
         ImageView album_art;
@@ -48,6 +61,16 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder>
             super(itemView);
             file_name = itemView.findViewById(R.id.music_file_name);
             album_art = itemView.findViewById(R.id.music_img);
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View v){
+            if(mListener != null) {
+                int position = getAdapterPosition();
+                if(position != RecyclerView.NO_POSITION){
+                    mListener.onItemClick(position);
+                }
+            }
         }
     }
 }

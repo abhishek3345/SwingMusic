@@ -4,8 +4,8 @@
     package="com.example.swingmusic">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwingMusic"
         tools:node="merge">
+        <activity
+            android:name=".MusicPlayer"
+            android:exported="false" />
         <activity
             android:name=".SecondSupplier"
             android:exported="false" />
@@ -37,7 +40,7 @@
             android:name=".chooseEmailVerifyMethod"
             android:exported="false" />
         <activity
-            android:name=".activity_email_otp"
+            android:name=".EmailOtp"
             android:exported="false" />
         <activity
             android:name=".ForgetPasswordSuccessMessage"

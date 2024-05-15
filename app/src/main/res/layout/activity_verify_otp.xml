@@ -79,7 +79,7 @@
             android:textSize="20sp" />
 
         <com.chaos.view.PinView
-            android:id="@+id/pin_view"
+            android:id="@+id/pinView"
             style="@style/PinWidget.PinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

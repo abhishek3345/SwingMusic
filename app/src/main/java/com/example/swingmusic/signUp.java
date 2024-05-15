@@ -1,10 +1,5 @@
 package com.example.swingmusic;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
-
 import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,29 +9,20 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.swingmusic.databinding.ActivitySignUpBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class signUp extends AppCompatActivity {
 
@@ -45,22 +31,25 @@ public class signUp extends AppCompatActivity {
     private TextView tv_text1, tvDesc;
     TextInputLayout mat1, mat2, mat3, mat4, mat5;
 
-    int code;
 
     FirebaseDatabase database;
     ProgressDialog progressDialog;
 
     ActivitySignUpBinding binding;
-    private FirebaseAuth auth;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
-        auth = FirebaseAuth.getInstance();
+
+
+        mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
         progressDialog = new ProgressDialog(signUp.this);
@@ -79,91 +68,35 @@ public class signUp extends AppCompatActivity {
         mat5 = findViewById(R.id.mat5);
         button1 = findViewById(R.id.signupbutt);
 
-        String mat1_txt = mat1.getEditText().getText().toString();
-        String mat2_txt = mat2.getEditText().getText().toString();
-        String mat3_txt = mat3.getEditText().getText().toString();
-        String mat4_txt = mat4.getEditText().getText().toString();
-        String mat5_txt = mat5.getEditText().getText().toString();
+        binding.signupbutt.setOnClickListener(v -> {
 
-        binding.signupbutt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendDataToDatabase();
-                if(!validateName() | !validatePassword() | !validateEmail() | !validatePhoneNo() | !validateUsername()){
-                    return;
-                }
-                else{
-                    progressDialog.show();
-                    auth.createUserWithEmailAndPassword(binding.regEmail.getText().toString(), binding.regPassword.getText().toString()).
-                            addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    progressDialog.dismiss();
-                                    if(task.isSuccessful()){
-                                        userHelperClass helperClass = new userHelperClass(binding.regUsername.getText().toString(), binding.regEmail.getText().toString(),
-                                                binding.regPhoneNo.getText().toString(), binding.regPassword.getText().toString());
-                                        String id = task.getResult().getUser().getUid();
-                                        database.getReference().child("Users").child(id).setValue(helperClass);
+            if(!validateName() | !validatePassword() | !validateEmail() | !validatePhoneNo() | !validateUsername()){
+                return;
+            }
+            else{
+                progressDialog.show();
+                mAuth.createUserWithEmailAndPassword(binding.regEmail.getText().toString(), binding.regPassword.getText().toString()).
+                        addOnCompleteListener(task -> {
+                            progressDialog.dismiss();
+                            if(task.isSuccessful()){
+                                userHelperClass helperClass = new userHelperClass(binding.regFullName.getText().toString(),binding.regUsername.getText().toString(), binding.regEmail.getText().toString(),
+                                        binding.regPhoneNo.getText().toString(), binding.regPassword.getText().toString());
+                                String id = task.getResult().getUser().getUid();
+                                database.getReference().child("Users").child(id).setValue(helperClass);
 
-                                        Handler handler = new Handler();
-                                        handler.postDelayed(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                callVerifyOTPScreen();
-                                            }
-                                        },0000);
-                                    }
-                                    else{
-                                        Toast.makeText(signUp.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                }
+                                callVerifyOTPScreen();
+                            }
+                            else{
+                                Toast.makeText(signUp.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivitySignIn();
-            }
-        });
+        button2.setOnClickListener(v -> openActivitySignIn());
     }
 
-    public void sendDataToDatabase(){
-        String mat1_txt = mat1.getEditText().getText().toString().trim();
-        String mat2_txt = mat2.getEditText().getText().toString().trim();
-        String mat3_txt = mat3.getEditText().getText().toString().trim();
-        String mat4_txt = mat4.getEditText().getText().toString().trim();
-        String mat5_txt = mat5.getEditText().getText().toString().trim();
-        String url = "https://swingmusic.000webhostapp.com/dbconnect.php";
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(signUp.this, response, Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(signUp.this, error.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                params.put("name",mat1_txt);
-                params.put("username",mat2_txt);
-                params.put("email",mat3_txt);
-                params.put("phoneno",mat4_txt);
-                params.put("password",mat5_txt);
 
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
-    }
 
     public void openActivitySignIn(){
         Intent intent = new Intent(signUp.this,signIn.class);
@@ -172,10 +105,8 @@ public class signUp extends AppCompatActivity {
         pairs[1] = new Pair<View,String>(tv_text1,"logo_name");
 
 
-        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(signUp.this,pairs);
-            startActivity(intent,options.toBundle());
-        }
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(signUp.this,pairs);
+        startActivity(intent,options.toBundle());
     }
 
 
@@ -257,16 +188,22 @@ public class signUp extends AppCompatActivity {
     }
 
     public void callVerifyOTPScreen(){
-        String _email = mat3.getEditText().getText().toString();
         if(!validatePhoneNo())
             return;
 
-        String _getUserEnteredPhoneNumber = mat4.getEditText().getText().toString().trim();
-        String _phoneNo = "+91"+ _getUserEnteredPhoneNumber;
+//        String fullName = mat1.getEditText().getText().toString().trim();
+//        String userName = mat2.getEditText().getText().toString().trim();
+//        String email = mat3.getEditText().getText().toString().trim();
+        String phoneNumber = mat4.getEditText().getText().toString().trim();
+//        String password = mat5.getEditText().getText().toString().trim();
+
 
         Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
-        intent.putExtra("phoneNo", _phoneNo);
-        intent.putExtra("email",_email);
+//        intent.putExtra("fullName", fullName);
+//        intent.putExtra("userName", userName);
+//        intent.putExtra("email", email);
+        intent.putExtra("phoneNo", phoneNumber);
+//        intent.putExtra("password", password);
         startActivity(intent);
     }
 

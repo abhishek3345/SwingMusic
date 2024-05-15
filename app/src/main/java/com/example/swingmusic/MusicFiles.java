@@ -1,6 +1,10 @@
 package com.example.swingmusic;
 
-public class MusicFiles {
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class MusicFiles implements Parcelable {
     private String path;
     private String title;
     private String artist;
@@ -15,8 +19,42 @@ public class MusicFiles {
         this.duration = duration;
     }
 
-    public MusicFiles() {
+    public MusicFiles(Parcel in) {
+        path = in.readString();
+        title = in.readString();
+        artist = in.readString();
+        album = in.readString();
+        duration = in.readString();
     }
+
+
+    public static final Creator<MusicFiles> CREATOR = new Creator<MusicFiles>() {
+        @Override
+        public MusicFiles createFromParcel(Parcel in) {
+            return new MusicFiles(in);
+        }
+
+        @Override
+        public MusicFiles[] newArray(int size) {
+            return new MusicFiles[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(path);
+        dest.writeString(title);
+        dest.writeString(artist);
+        dest.writeString(album);
+        dest.writeString(duration);
+    }
+
+
 
     public String getPath() {
         return path;

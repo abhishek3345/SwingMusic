@@ -1,8 +1,5 @@
 package com.example.swingmusic;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,17 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.swingmusic.databinding.ActivitySignInBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class signIn extends AppCompatActivity {
     private Button button;
     private ImageView image;
     private TextView tv_text;
+
+    private Button forgetPass ;
 
     ActivitySignInBinding binding;
     ProgressDialog progressDialog;
@@ -33,24 +32,22 @@ public class signIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
+
 
         auth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(signIn.this);
         progressDialog.setTitle("Login");
         progressDialog.setMessage("Finding your Account!");
 
-        binding.signinbutt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog.show();
-                auth.signInWithEmailAndPassword(binding.email1.getText().toString(), binding.password1.getText().toString()).
-                        addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+        binding.signinbutt.setOnClickListener(v -> {
+            progressDialog.show();
+            auth.signInWithEmailAndPassword(binding.email1.getText().toString(), binding.password1.getText().toString()).
+                    addOnCompleteListener(task -> {
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
                             Toast.makeText(signIn.this, "You have Successfully Signed Into your Account!", Toast.LENGTH_SHORT).show();
@@ -60,16 +57,14 @@ public class signIn extends AppCompatActivity {
                         else{
                             Toast.makeText(signIn.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
-            }
+                    });
         });
 //        if(auth.getCurrentUser()!=null){     // In case of detecteing the present user!
 //            Intent intent = new Intent(signIn.this,Home.class);
 //            startActivity(intent);
 //        }
 
-        button = (Button) findViewById(R.id.button);
+        button = findViewById(R.id.button);
         image = findViewById(R.id.logo_signIn);
         tv_text = findViewById(R.id.logo_name);
 
@@ -77,6 +72,16 @@ public class signIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivitySignUp();
+            }
+        });
+
+        forgetPass = binding.forgetpass ;
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(signIn.this,ForgotPassword.class);
+                startActivity(intent);
             }
         });
     }
@@ -98,4 +103,8 @@ public class signIn extends AppCompatActivity {
             startActivity(intent,options.toBundle());
         }
     }
+
+
 }
+
+
