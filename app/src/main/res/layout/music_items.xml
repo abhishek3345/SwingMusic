@@ -11,17 +11,40 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/music_img"
+        android:layout_marginTop="24dp"
         android:foreground="@drawable/disc"
         android:padding="5dp"/>
 
     <TextView
+        android:id="@+id/music_file_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="File Name"
-        android:layout_toEndOf="@+id/music_img"
+        android:layout_toEndOf="@id/music_img"
         android:layout_marginStart="10dp"
         android:layout_centerVertical="true"
         android:textColor="@color/white"
-        android:id="@+id/music_file_name"/>
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="16sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_marginBottom="4dp"
+        android:scrollHorizontally="true" />
+
+    <TextView
+        android:id="@+id/song_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="artist name"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        android:textAlignment="textStart"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/music_file_name"
+        android:layout_toEndOf="@id/music_img"
+        android:layout_marginTop="20dp"
+        />
 
 </RelativeLayout>

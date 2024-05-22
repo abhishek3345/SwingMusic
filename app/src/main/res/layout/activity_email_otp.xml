@@ -18,7 +18,6 @@
             android:id="@+id/close"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:onClick="closeButt"
             android:backgroundTint="@color/bg_logo"
             android:padding="5dp"
             android:src="@drawable/ic_baseline_close_24" />
@@ -64,7 +63,7 @@
             android:fontFamily="@font/antic"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Enter One Time Password sent on"
+            android:text="Click the Password reset link sent on"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -78,35 +77,11 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <com.chaos.view.PinView
-            android:id="@+id/pinFromUser"
-            style="@style/PinWidget.PinView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:cursorVisible="true"
-            android:inputType="number"
-            app:cursorColor="@color/black"
-            app:itemCount="4"
-            app:itemRadius="5dp"
-            app:lineColor="@color/dark_black" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/verifyButt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:backgroundTint="@color/black"
-                android:background="@drawable/btn_gradient"
-                android:text="Verify OTP"
-                android:textColor="@color/white"
-                android:visibility="visible"
-                />
 
             <ProgressBar
                 android:id="@+id/progressBar"

@@ -62,4 +62,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_us_text">SwingMusic is the brainchild of passionate music enthusiasts who embarked on a journey to create an innovative music platform. Developed by [Your Name] and [Your Friend\'s Name], with the assistance of advanced technology like AI, SwingMusic aims to revolutionize the way people experience music. Our vision is to provide a unique and personalized music discovery experience, crafted with dedication and fueled by our shared love for music.</string>
+    <string name="user">New User</string>
+    <string name="register">Register</string>
+    <string name="server_clinet_id">82665834592–1iv191vtsjr0oi9k4f313lkoi1asuj23</string>
+
 </resources>

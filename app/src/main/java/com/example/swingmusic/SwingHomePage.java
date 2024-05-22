@@ -26,7 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SwingHomePage extends AppCompatActivity {
+public class SwingHomePage extends AppCompatActivity  {
 
     BottomNavigationView bottomNavigationView;
 
@@ -74,8 +74,8 @@ public class SwingHomePage extends AppCompatActivity {
                 }
             });
         } else {
-            nameTextView.setText("New User");
-            usernameTextView.setText("Register");
+            nameTextView.setText(R.string.user);
+            usernameTextView.setText(R.string.register);
         }
 
         MenuItem logoutMenuItem = navigationView.getMenu().findItem(R.id.logout);
@@ -84,6 +84,9 @@ public class SwingHomePage extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
                 FirebaseAuth.getInstance().signOut();
+                nameTextView.setText(R.string.user);
+                usernameTextView.setText(R.string.register);
+                Toast.makeText(SwingHomePage.this,"User signed out successfully!",Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(SwingHomePage.this,MainActivity.class);
                 startActivity(intent);

@@ -38,8 +38,6 @@ public class SongsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ArrayList<MusicFiles> musicFilesArrayList;
-
-
     private MediaPlayer mediaPlayer ;
 
     @Nullable
@@ -48,7 +46,6 @@ public class SongsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_songs, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerView);
         mediaPlayer = new MediaPlayer();
-
 
         return rootView;
     }
@@ -59,6 +56,7 @@ public class SongsFragment extends Fragment {
         // Initialize RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         // Get music files list
+        SwingLibraryPage activity = (SwingLibraryPage) getActivity();
         musicFilesArrayList = SwingLibraryPage.getAllAudio(requireActivity());
         // Set adapter to RecyclerView
         MusicAdapter adapter = new MusicAdapter(getActivity(), musicFilesArrayList);
@@ -68,7 +66,6 @@ public class SongsFragment extends Fragment {
 
         adapter.setOnItemClickListener(position -> {
             String path = musicFilesArrayList.get(position).getPath() ;
-
 
            openMusicPlayer(path);
         });
@@ -81,5 +78,9 @@ public class SongsFragment extends Fragment {
 
 
         startActivity(intent);
+    }
+
+    public ArrayList<MusicFiles> getMusicFilesList() {
+        return musicFilesArrayList;
     }
 }

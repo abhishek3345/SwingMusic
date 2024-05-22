@@ -4,12 +4,19 @@ package com.example.swingmusic;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.UUID;
+
 public class MusicFiles implements Parcelable {
+
+    private String id;
     private String path;
     private String title;
     private String artist;
     private String album;
     private String duration;
+
+    private boolean isFavorite ;
+
 
     public MusicFiles(String path, String title, String artist, String album, String duration) {
         this.path = path;
@@ -17,14 +24,19 @@ public class MusicFiles implements Parcelable {
         this.artist = artist;
         this.album = album;
         this.duration = duration;
+        this.id = UUID.randomUUID().toString();
+        this.isFavorite = false;
+
     }
 
     public MusicFiles(Parcel in) {
+        id = in .readString();
         path = in.readString();
         title = in.readString();
         artist = in.readString();
         album = in.readString();
         duration = in.readString();
+        isFavorite = in.readByte() !=0;
     }
 
 
@@ -47,11 +59,13 @@ public class MusicFiles implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeString(path);
         dest.writeString(title);
         dest.writeString(artist);
         dest.writeString(album);
         dest.writeString(duration);
+        dest.writeByte((byte) (isFavorite ? 1:0));
     }
 
 
@@ -95,4 +109,21 @@ public class MusicFiles implements Parcelable {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+    public boolean isFavorite(){
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite){
+        isFavorite = favorite;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

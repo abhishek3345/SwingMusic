@@ -1,6 +1,9 @@
 package com.example.swingmusic;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +48,8 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder>
     @Override
     public void onBindViewHolder(@NonNull MyVieHolder holder, int position) {
         holder.file_name.setText(mFiles.get(position).getTitle());
+        holder.artist_name.setText(mFiles.get(position).getArtist());
+
     }
 
     @Override
@@ -55,12 +60,15 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder>
     public class MyVieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView file_name;
+        TextView artist_name;
         ImageView album_art;
 
         public MyVieHolder(@NonNull View itemView){
             super(itemView);
             file_name = itemView.findViewById(R.id.music_file_name);
+            artist_name = itemView.findViewById(R.id.song_artist);
             album_art = itemView.findViewById(R.id.music_img);
+            file_name.setSelected(true);
             itemView.setOnClickListener(this);
         }
         @Override

@@ -187,23 +187,13 @@ public class signUp extends AppCompatActivity {
         }
     }
 
-    public void callVerifyOTPScreen(){
+    public void callVerifyOTPScreen() {
         if(!validatePhoneNo())
             return;
 
-//        String fullName = mat1.getEditText().getText().toString().trim();
-//        String userName = mat2.getEditText().getText().toString().trim();
-//        String email = mat3.getEditText().getText().toString().trim();
         String phoneNumber = mat4.getEditText().getText().toString().trim();
-//        String password = mat5.getEditText().getText().toString().trim();
-
-
         Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
-//        intent.putExtra("fullName", fullName);
-//        intent.putExtra("userName", userName);
-//        intent.putExtra("email", email);
         intent.putExtra("phoneNo", phoneNumber);
-//        intent.putExtra("password", password);
         startActivity(intent);
     }
 
