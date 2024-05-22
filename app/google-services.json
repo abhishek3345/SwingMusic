@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "82665834592",
+    "firebase_url": "https://swingmusic-35f27-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "swingmusic-35f27",
+    "storage_bucket": "swingmusic-35f27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82665834592:android:ff39d21241a472dc545b05",
+        "android_client_info": {
+          "package_name": "com.example.swingmusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANpM6nGjFs4gdPvy8a7Sw3sosuyHXROWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
