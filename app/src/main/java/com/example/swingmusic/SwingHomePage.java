@@ -100,24 +100,21 @@ public class SwingHomePage extends AppCompatActivity  {
         rateUsMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
+
+                Toast.makeText(SwingHomePage.this, "Open with Gmail!", Toast.LENGTH_LONG).show();
                 String[] recipient = {"2020bcs007@sggs.ac.in"};
                 String subject = "User Rating of your SwingMusic app";
                 String message = "Give us the rating between 1 to 5\n\n\n" +
                         "Thanks for your Rating!\n" +
                         "Team SwingMusic";
+
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("text/plain");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL,recipient);
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT,subject);
-                emailIntent.putExtra(Intent.EXTRA_TEXT,message);
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, recipient);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
-                if (emailIntent.resolveActivity(getPackageManager()) != null) {
-                    // Start the activity (email app)
-                    startActivity(emailIntent);
-                } else {
-                    // Handle the case where no email app is available
-                    Toast.makeText(SwingHomePage.this, "No email app found", Toast.LENGTH_SHORT).show();
-                }
+                startActivity(emailIntent);
 
                 return true;
             }
@@ -127,6 +124,8 @@ public class SwingHomePage extends AppCompatActivity  {
         feedbackMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
+                // Define the recipient, subject, and message for the email
+                Toast.makeText(SwingHomePage.this, "Open with Gmail!", Toast.LENGTH_LONG).show();
                 String[] recipient = {"2020bcs007@sggs.ac.in"};
                 String subject = "User Feedback of your SwingMusic app";
                 String message =  "Thanks for your time, we are glad to hear from you!\n\n" +
@@ -135,22 +134,20 @@ public class SwingHomePage extends AppCompatActivity  {
                         "Thanks for your feedback!\n" +
                         "We are working hard to serve you!";
 
+                // Create an intent to send an email
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("text/plain");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL,recipient);
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT,subject);
-                emailIntent.putExtra(Intent.EXTRA_TEXT,message);
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, recipient);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                emailIntent.putExtra(Intent.EXTRA_TEXT, message);
 
-                if (emailIntent.resolveActivity(getPackageManager()) != null) {
-                    // Start the activity (email app)
-                    startActivity(emailIntent);
-                } else {
-                    // Handle the case where no email app is available
-                    Toast.makeText(SwingHomePage.this, "No email app found", Toast.LENGTH_SHORT).show();
-                }
+                // Ensure there is an email app to handle the intent
+
+                startActivity(emailIntent);
 
                 return true;
             }
+
         });
 
 
@@ -240,7 +237,7 @@ public class SwingHomePage extends AppCompatActivity  {
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_zyan = new Intent(SwingHomePage.this,ZyanAlbum.class);
+                Intent intent_zyan = new Intent(SwingHomePage.this, SonuNigamAlbum.class);
                 startActivity(intent_zyan);
             }
         });

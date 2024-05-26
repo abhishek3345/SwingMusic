@@ -1,6 +1,5 @@
 package com.example.swingmusic;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,77 +10,94 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.swingmusic.MusicFiles;
+import com.example.swingmusic.R;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavouriteViewHolder> {
 
-    private Context context;
-    private ArrayList<MusicFiles> favoritesList;
-    private OnItemClickListener onItemClickListener;
+    private Context mContext;
+    private ArrayList<MusicFiles> mFavouriteMusicFiles;
 
+    private static OnItemClickListener mListener ;
 
-    public FavoritesAdapter(Context context, ArrayList<MusicFiles> favoritesList) {
-        this.context = context;
-        this.favoritesList = favoritesList != null ? favoritesList : new ArrayList<>();
-    }
-
-    @NonNull
-    @Override
-    public FavoritesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.music_items, parent, false);
-        return new FavoritesViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull FavoritesViewHolder holder, int position) {
-        MusicFiles currentSong = favoritesList.get(position);
-        holder.file_name.setText(currentSong.getTitle());
-        holder.artist_name.setText(currentSong.getArtist());
-        // Set the album art or thumbnail if available
-        // holder.album_art.setImageBitmap(...);
-    }
-
-    @Override
-    public int getItemCount() {
-        return favoritesList.size();
+    public FavoritesAdapter(Context context, ArrayList<MusicFiles> favouriteMusicFiles) {
+        mContext = context;
+        mFavouriteMusicFiles = favouriteMusicFiles;
     }
 
     public interface OnItemClickListener {
         void onItemClick(int position);
+        void onItemLongClick(int position);
     }
+
 
     public void setOnItemClickListener(OnItemClickListener listener) {
-        this.onItemClickListener = listener;
+        mListener = listener ;
     }
 
+    @NonNull
+    @Override
+    public FavouriteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.music_items, parent, false);
+        return new FavouriteViewHolder(view);
+    }
 
-    public void updateFavoritesList(ArrayList<MusicFiles> newFavoritesList) {
-        this.favoritesList = newFavoritesList != null ? newFavoritesList : new ArrayList<>();
+    public void setData(ArrayList<MusicFiles> newData) {
+        mFavouriteMusicFiles = newData;
         notifyDataSetChanged();
     }
-    public class FavoritesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView file_name;
-        TextView artist_name;
-        ImageView album_art;
+    @Override
+    public void onBindViewHolder(@NonNull FavouriteViewHolder holder, int position) {
+        MusicFiles musicFile = mFavouriteMusicFiles.get(position);
+        holder.fileName.setText(musicFile.getTitle());
+        holder.artistName.setText(musicFile.getArtist());
+        // You can set the album art here if needed
+    }
 
-        public FavoritesViewHolder(@NonNull View itemView) {
+    @Override
+    public int getItemCount() {
+          if(mFavouriteMusicFiles != null){
+            return mFavouriteMusicFiles.size();
+        }else {
+              return 0;
+          }
+    }
+
+
+    static class FavouriteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+        TextView fileName;
+        TextView artistName;
+        ImageView albumArt;
+
+        FavouriteViewHolder(@NonNull View itemView) {
             super(itemView);
-            file_name = itemView.findViewById(R.id.music_file_name);
-            artist_name = itemView.findViewById(R.id.song_artist);
-            album_art = itemView.findViewById(R.id.music_img);
+            fileName = itemView.findViewById(R.id.music_file_name);
+            artistName = itemView.findViewById(R.id.song_artist);
+            albumArt = itemView.findViewById(R.id.music_img);
             itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
         }
 
         @Override
-        public void onClick(View v) {
-            if (onItemClickListener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    onItemClickListener.onItemClick(position);
-                }
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            if(position != RecyclerView.NO_POSITION){
+                mListener.onItemClick(position);
             }
         }
-    }
 
+        @Override
+        public boolean onLongClick(View view) {
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                mListener.onItemLongClick(position);
+            }
+            return true;
+        }
+
+    }
 }

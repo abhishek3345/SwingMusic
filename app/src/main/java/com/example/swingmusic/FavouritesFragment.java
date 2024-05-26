@@ -1,10 +1,10 @@
 package com.example.swingmusic;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,104 +12,132 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.example.swingmusic.FavoritesAdapter;
+import com.example.swingmusic.MusicFiles;
+import com.example.swingmusic.R;
+import com.example.swingmusic.SongDatabase;
+import com.example.swingmusic.SongDatabaseHelper;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public class FavouritesFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private FavoritesAdapter favoritesAdapter ;
-    private MusicAdapter adapter;
-    private ArrayList<MusicFiles> favouritesList;
-
-    private SharedPreferences sharedPreferences;
-    private Set<String> favoriteSongIds;
-
-
-    private ArrayList<MusicFiles> allMusicFilesList;
-
+    private RecyclerView recyclerViewFavourites;
+    private FavoritesAdapter favouritesAdapter;
+    private ArrayList<MusicFiles> favouriteMusicFiles;
+    private SongDatabase songDatabase;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_favourites, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_favourites, container, false);
+        recyclerViewFavourites = rootView.findViewById(R.id.recyclerViewFavourites);
+        return rootView;
     }
 
     @Override
-
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.recyclerViewFavourites);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        favouriteMusicFiles = new ArrayList<>();
 
-        // Initialize SharedPreferences
-        sharedPreferences = requireContext().getSharedPreferences("FavoriteSongs", Context.MODE_PRIVATE);
-        favoriteSongIds = sharedPreferences.getStringSet("FavoriteSongIds", new HashSet<>());
+        // Get an instance of the SongDao
+        songDatabase = SongDatabaseHelper.getInstance(requireContext());
 
-        // Get the musicFilesArrayList from the SongsFragment
+        LiveData<List<Song>> favouriteSongs = songDatabase.songDao().getFavoriteSongs();
 
-        allMusicFilesList = SwingLibraryPage.getAllAudio(requireActivity());
+        favouriteSongs.observe(getViewLifecycleOwner(), songs->{
+
+            // Convert the list of favourite songs to a list of MusicFiles
+            favouriteMusicFiles = convertSongsToMusicFiles(songs);
+            favouritesAdapter.setData(favouriteMusicFiles);
+
+            //On tiem click
+            favouritesAdapter.setOnItemClickListener(new FavoritesAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    String path = favouriteMusicFiles.get(position).getPath();
+                    openMusicPlayer(path, position, favouriteMusicFiles);
+
+                }
+                @Override
+                public void onItemLongClick(int position) {
+                    showRemoveFromFavouritesDialog(position);
+                }
+            });
 
 
+        });
 
+        // Set up the adapter and recyclerView
+        favouritesAdapter = new FavoritesAdapter(getActivity(),favouriteMusicFiles);
+        recyclerViewFavourites.setAdapter(favouritesAdapter);
+        recyclerViewFavourites.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        // Create an instance of the FavoritesAdapter
-        favoritesAdapter = new FavoritesAdapter(getActivity(), favouritesList);
-        recyclerView.setAdapter(favoritesAdapter);
+    }
 
-        // Retrieve the list of favorite music files
-        favouritesList = retrieveFavourites();
+    private void showRemoveFromFavouritesDialog(int position) {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Remove from Favourites")
+                .setMessage("Are you sure you want to remove this song from favourites?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    removeFromFavourites(position);
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
 
+    private void removeFromFavourites(int position) {
+        String songId = favouriteMusicFiles.get(position).getId();
 
-        // Set item click listener
-        favoritesAdapter.setOnItemClickListener(position -> {
-            String path = favouritesList.get(position).getPath();
-            openMusicPlayer(path);
+        DatabaseExecutor.getExecutor().execute(() -> {
+            try {
+                Song song = songDatabase.songDao().getSongByIdSync(songId);
+                if (song != null) {
+                    boolean isFav ;
+                    isFav = !song.isFavorite();
+                    song.setFavorite(isFav);
+                    songDatabase.songDao().update(song);
+
+                    requireActivity().runOnUiThread(() -> {
+                        favouriteMusicFiles.remove(position);
+                        favouritesAdapter.notifyItemRemoved(position);
+                    });
+                }
+            } catch (Exception e) {
+                Log.e("FavouritesFragment", "Error removing song from favourites", e);
+            }
         });
     }
 
-    // Method to retrieve favorite music files
+    private void openMusicPlayer(String path, int position, ArrayList<MusicFiles>favouriteMusicFiles) {
 
-    private ArrayList<MusicFiles> retrieveFavourites() {
-        ArrayList<MusicFiles> favourites = new ArrayList<>();
-
-        for (MusicFiles musicFile : allMusicFilesList) {
-            if (favoriteSongIds.contains(musicFile.getId())) {
-                favourites.add(musicFile);
-            }
-        }
-        return favourites;
-    }
-
-
-
-
-    public void updateFavorites() {
-        // Retrieve the updated list of favorites
-        favouritesList = retrieveFavourites();
-
-        // Notify the adapter about the data set change
-        favoritesAdapter.updateFavoritesList(favouritesList);
-    }
-
-
-    // Method to open music player
-    private void openMusicPlayer(String path) {
         Intent intent = new Intent(getActivity(), MusicPlayer.class);
-        intent.putExtra("songPath", path);
+        intent.putParcelableArrayListExtra("musicFilesList", favouriteMusicFiles);
+        intent.putExtra("songPath",path);
+        intent.putExtra("songIndex",position);
+
         startActivity(intent);
+    }
+
+    private ArrayList<MusicFiles> convertSongsToMusicFiles(List<Song> songs) {
+        ArrayList<MusicFiles> musicFiles = new ArrayList<>();
+        for (Song song : songs) {
+            MusicFiles musicFile = new MusicFiles(
+                    song.getPath(),
+                    song.getTitle(),
+                    song.getArtist(),
+                    song.getAlbum(),
+                    song.getDuration()
+            );
+            musicFile.setFavorite(song.isFavorite());
+            musicFiles.add(musicFile);
+        }
+        return musicFiles;
     }
 }

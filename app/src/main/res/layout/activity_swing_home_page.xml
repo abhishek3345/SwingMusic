@@ -139,7 +139,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/zayn_round"
+                                        android:src="@drawable/sonu_nigam"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -147,7 +147,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/zyan_malik"
+                                        android:text="@string/sonu_nigam"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -161,7 +161,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/taylor_round"
+                                        android:src="@drawable/alkayagnik"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -169,7 +169,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/taylor_swift"
+                                        android:text="@string/alka_yagnik"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -205,7 +205,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/ed_round"
+                                        android:src="@drawable/latamangeshkar"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -213,7 +213,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/ed_sheeran"
+                                        android:text="@string/lata_mangeshkar"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -227,7 +227,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/armaan_round"
+                                        android:src="@drawable/arman"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -249,7 +249,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/selena_round"
+                                        android:src="@drawable/kk"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -257,7 +257,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/selena_gomez"
+                                        android:text="@string/kk"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -293,7 +293,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/justin_round"
+                                        android:src="@drawable/ashabhosle"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -301,7 +301,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/justin_bieber"
+                                        android:text="@string/asha_bhosle"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -316,7 +316,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/bruno_round"
+                                        android:src="@drawable/uditnarayan"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -324,7 +324,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/bruno_mars"
+                                        android:text="@string/uditnarayan"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -338,7 +338,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/dua_round"
+                                        android:src="@drawable/kumarsanu"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -346,7 +346,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/dua_lipa"
+                                        android:text="@string/kumarsanu"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -360,7 +360,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/weeknd_round"
+                                        android:src="@drawable/rahat"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -368,7 +368,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/the_weeknd"
+                                        android:text="@string/rahatfathe"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -404,7 +404,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/drake_round"
+                                        android:src="@drawable/arrehman"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -412,7 +412,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/drake"
+                                        android:text="@string/arrehman"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -426,7 +426,7 @@
                                     <de.hdodenhof.circleimageview.CircleImageView
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
-                                        android:src="@drawable/ariana_round"
+                                        android:src="@drawable/shankar"
                                         app:civ_border_color="@color/bg_logo"
                                         app:civ_border_width="2dp" />
 
@@ -434,7 +434,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/ariana_grande"
+                                        android:text="@string/shankarmahadevan"
                                         android:textColor="#FFFFFF"
                                         android:textStyle="bold" />
                                 </LinearLayout>
@@ -500,7 +500,7 @@
                             android:layout_width="200dp"
                             android:layout_height="200dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/img"/>
+                            android:background="@drawable/img7_slider"/>
 
                     </ViewFlipper>
 
@@ -512,7 +512,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="7dp"
                         android:fontFamily="@font/baloo_bhai"
-                        android:text="@string/international_top_hits"
+                        android:text="@string/indian_devotional"
                         android:textColor="#00BCD4"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -543,14 +543,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
                                         android:background="@drawable/album_gradient"
-                                        android:src="@drawable/stay_song" />
+                                        android:src="@drawable/hanuman_chalisa" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/stay"
+                                        android:text="@string/hanuman_chalisa"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -559,7 +559,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/justin_bieber2"
+                                        android:text="@string/anup_jalota"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -573,14 +573,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
                                         android:background="@drawable/album_gradient"
-                                        android:src="@drawable/blinding_lights_song" />
+                                        android:src="@drawable/humare_saath_shri" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/blinding_lights"
+                                        android:text="@string/humare_saath_shri"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -589,7 +589,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/the_weeknd2"
+                                        android:text="@string/agam_agarwal"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -603,14 +603,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
                                         android:background="@drawable/album_gradient"
-                                        android:src="@drawable/circles_song" />
+                                        android:src="@drawable/mere_ghar_ram" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/circles"
+                                        android:text="@string/mere_ghar_ram"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -619,7 +619,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/post_malone"
+                                        android:text="@string/Jubin"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -632,15 +632,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-
-                                        android:src="@drawable/badhabits_song" />
+                                        android:src="@drawable/om_namah_shivay" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/bad_habits"
+                                        android:text="@string/om_namah"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -649,37 +648,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/ed_sheeran2"
-                                        android:textColor="#FFFFFF" />
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical"
-                                    android:layout_marginLeft="7dp"
-                                    android:layout_marginRight="10dp">
-
-                                    <ImageView
-                                        android:layout_width="150dp"
-                                        android:layout_height="150dp"
-                                        android:background="@drawable/album_gradient"
-                                        android:src="@drawable/good4u_song" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="7dp"
-                                        android:layout_weight="1"
-                                        android:text="Good 4 U"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20sp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="7dp"
-                                        android:text="@string/olivia_rodrigo"
+                                        android:text="@string/shankarmahadevan"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -693,14 +662,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
                                         android:background="@drawable/album_gradient"
-                                        android:src="@drawable/levitating_song" />
+                                        android:src="@drawable/ram_siya_ram" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/levitating"
+                                        android:text="@string/ram_siya_ram"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -709,7 +678,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/dua_lipa2"
+                                        android:text="Jaya Kishori"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -723,14 +692,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
                                         android:background="@drawable/album_gradient"
-                                        android:src="@drawable/memories_song" />
+                                        android:src="@drawable/sankat_mochan" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/memories"
+                                        android:text="@string/sankat_mochan_hanuman"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -739,7 +708,37 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/maroon_5"
+                                        android:text="@string/hariharan"
+                                        android:textColor="#FFFFFF" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <ImageView
+                                        android:layout_width="150dp"
+                                        android:layout_height="150dp"
+                                        android:background="@drawable/album_gradient"
+                                        android:src="@drawable/govind_bolo" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="7dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/govind_bolo"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="7dp"
+                                        android:text="@string/suresh_wadkar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -754,7 +753,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="7dp"
                         android:fontFamily="@font/baloo_bhai"
-                        android:text="All Time Favourites"
+                        android:text="@string/evergreen_bollywood"
                         android:textColor="#00BCD4"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -783,14 +782,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/lovemelikeudo_song" />
+                                        android:src="@drawable/gulabi_ankhen" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Love Me Like..."
+                                        android:text="@string/gulabi_ankhe"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -799,7 +798,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Ellie Glouding"
+                                        android:text="@string/mohammad_rafi"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -812,14 +811,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/loveurself_song" />
+                                        android:src="@drawable/gata_rahe_mera_dil" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/love_your_self"
+                                        android:text="@string/gata_rahe_mera"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -828,7 +827,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/justin_bieber"
+                                        android:text="@string/kishor_kumar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -841,14 +840,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/wolves_song" />
+                                        android:src="@drawable/aja_sanam" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/wolves"
+                                        android:text="Aja Sanam Madhor.."
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -857,7 +856,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/selena_gomez"
+                                        android:text="@string/lata_mangeshkar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -870,15 +869,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-
-                                        android:src="@drawable/starboy_song" />
+                                        android:src="@drawable/ajeeb_dasatan" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/star_boy"
+                                        android:text="@string/ajeeb_dastan_hai"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -887,7 +885,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/the_weeknd"
+                                        android:text="@string/lata_mangeshkar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -900,14 +898,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/uptown_song" />
+                                        android:src="@drawable/baharoo_phul" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/uptown_funk"
+                                        android:text="@string/baharo_phul_ba"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -916,7 +914,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Bruno Mars"
+                                        android:text="@string/mohammad_rafi"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -929,15 +927,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-
-                                        android:src="@drawable/something_song" />
+                                        android:src="@drawable/dekha_ek_khwab" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/something_just"
+                                        android:text="@string/dekha_ek_khwab"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -946,7 +943,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/chainsmokers_coldplay"
+                                        android:text="@string/kishor_kumar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -959,14 +956,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/believer_song" />
+                                        android:src="@drawable/kabhi_kabhi" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/believer"
+                                        android:text="@string/kabhi_kabhi_mere"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -975,7 +972,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/imagine_dragons"
+                                        android:text="Mukesh"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -988,14 +985,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/havana_song" />
+                                        android:src="@drawable/o_mere_dil_ke" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/havana"
+                                        android:text="@string/o_mere_dil_ke"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1004,7 +1001,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/camila_cabello"
+                                        android:text="@string/kishor_kumar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1017,14 +1014,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/sugar_song" />
+                                        android:src="@drawable/kora_kagaj" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="@string/sugar"
+                                        android:text="@string/kora_kagaj_tha"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1033,7 +1030,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="@string/maroon_5"
+                                        android:text="@string/sudesh_bhosle"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -1369,7 +1366,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="7dp"
                         android:fontFamily="@font/baloo_bhai"
-                        android:text="Top Hits Punjabi"
+                        android:text="Marathi All Time Hits"
                         android:textColor="#00BCD4"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -1398,14 +1395,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/excuses_song" />
+                                        android:src="@drawable/tula_japnar_aahe" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Excuses"
+                                        android:text="@string/tula_japnar_ahe"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1414,7 +1411,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="A P Dhillon"
+                                        android:text="@string/adarsh_shinde"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1427,14 +1424,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/kudiyan_song" />
+                                        android:src="@drawable/lai_bhari" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Kudiyan Lahor..."
+                                        android:text="Mauli Mauli"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1443,7 +1440,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Harrdy Sandhu"
+                                        android:text="@string/ajay_atul"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1456,14 +1453,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/prada_song" />
+                                        android:src="@drawable/nataranga_ubha" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Prada"
+                                        android:text="Natrang Ubha"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1472,7 +1469,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Jass Manak"
+                                        android:text="Ajay-Atul"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1485,14 +1482,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/lahore_song" />
+                                        android:src="@drawable/kadhi_tu" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Lahore"
+                                        android:text="@string/kadhi_tu"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1501,7 +1498,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Guru Randhawa"
+                                        android:text="@string/hrishikesh_ranade"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1514,14 +1511,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/brwonmunde_song" />
+                                        android:src="@drawable/tik_tik" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Brown Munde"
+                                        android:text="Tik tik wajat.."
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1530,7 +1527,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="A P Dhillon"
+                                        android:text="@string/sayli_pankaj"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1544,14 +1541,14 @@
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
 
-                                        android:src="@drawable/uddgaya_song" />
+                                        android:src="@drawable/mala_ved" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Udd Gaya"
+                                        android:text="Mala Ved Lag.."
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1560,7 +1557,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="B Praak"
+                                        android:text="@string/ketaki_mategaonkar"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1573,14 +1570,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/highrated_song" />
+                                        android:src="@drawable/saaj_hyo" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="HighRated Ga..."
+                                        android:text="@string/saaj_hyo_tuza"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1589,7 +1586,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Guru Randhawa"
+                                        android:text="Onkar Swaroop"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1602,14 +1599,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/lehanga_song" />
+                                        android:src="@drawable/sairat_zala" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Lehanga"
+                                        android:text="@string/sairat_zala_ji"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1618,7 +1615,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Jass Manak"
+                                        android:text="@string/ajay_atul"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1631,14 +1628,14 @@
                                     <ImageView
                                         android:layout_width="150dp"
                                         android:layout_height="150dp"
-                                        android:src="@drawable/panidigal_song" />
+                                        android:src="@drawable/chandra" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
                                         android:layout_weight="1"
-                                        android:text="Pani Di Gal"
+                                        android:text="Chandra"
                                         android:textColor="#FFFFFF"
                                         android:textSize="20sp"
                                         android:textStyle="bold" />
@@ -1647,7 +1644,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="7dp"
-                                        android:text="Maninder Buttar"
+                                        android:text="@string/shreya_ghoshal"
                                         android:textColor="#FFFFFF" />
                                 </LinearLayout>
                             </LinearLayout>

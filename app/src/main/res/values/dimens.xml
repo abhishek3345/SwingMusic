@@ -3,4 +3,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="music_time">10dp</dimen>
+    <dimen name="btn_width">140dp</dimen>
 </resources>

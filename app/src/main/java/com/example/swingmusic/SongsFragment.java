@@ -56,7 +56,7 @@ public class SongsFragment extends Fragment {
         // Initialize RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         // Get music files list
-        SwingLibraryPage activity = (SwingLibraryPage) getActivity();
+
         musicFilesArrayList = SwingLibraryPage.getAllAudio(requireActivity());
         // Set adapter to RecyclerView
         MusicAdapter adapter = new MusicAdapter(getActivity(), musicFilesArrayList);
@@ -67,14 +67,15 @@ public class SongsFragment extends Fragment {
         adapter.setOnItemClickListener(position -> {
             String path = musicFilesArrayList.get(position).getPath() ;
 
-           openMusicPlayer(path);
+           openMusicPlayer(path,position);
         });
     }
 
-    private void openMusicPlayer(String path) {
+    private void openMusicPlayer(String path, int position) {
         Intent intent = new Intent(getActivity(), MusicPlayer.class);
         intent.putParcelableArrayListExtra("musicFilesList", musicFilesArrayList);
         intent.putExtra("songPath",path);
+        intent.putExtra("songIndex",position);
 
 
         startActivity(intent);

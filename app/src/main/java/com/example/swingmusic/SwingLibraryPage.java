@@ -45,6 +45,10 @@ public class SwingLibraryPage extends AppCompatActivity implements FetchMusicFil
     public static final int REQUEST_CODE = 1;
     ArrayList<MusicFiles> musicFiles;
 
+    public FavouritesFragment favoritesFragment;
+
+
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class SwingLibraryPage extends AppCompatActivity implements FetchMusicFil
 
         getSupportActionBar().hide();
         getWindow().setStatusBarColor(ContextCompat.getColor(SwingLibraryPage.this, R.color.home_scr));
+
+        favoritesFragment = (FavouritesFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_favourites);
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id._library);

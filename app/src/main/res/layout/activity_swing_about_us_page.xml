@@ -31,33 +31,113 @@
             android:layout_above="@+id/bottom_navigator"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/app_logo_black"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Swing"
+                android:transitionName="logo_name"
+                android:textColor="@color/login_bg_3"
+                android:textSize="60sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/antic"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="~the Mosaic of Air"
+                android:textColor="@color/purple_700"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_marginBottom="32dp"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="About Us"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                android:gravity="center"
-                android:fontFamily="@font/bungee"
-                />
+                android:textAlignment="center"
+                android:fontFamily="@font/amaranth_bold" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/about_us_text"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/antic"
-                android:textSize="15sp"
-                android:textColor="@color/faint_white"
+                android:text="v0.3.1 by Abhishek"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contactus"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/grey"
                 />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
 
+
+                    <Button
+                        android:id="@+id/btn_linkedin"
+                        style="@style/Widget.Material3.Button.Icon"
+                        app:icon ="@drawable/ic_linkedin"
+                        android:layout_width="@dimen/btn_width"
+                        android:layout_height="wrap_content"
+                        android:text="LinkedIn"
+                        android:textSize="16dp"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_github"
+                        android:layout_width="@dimen/btn_width"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.Button.Icon"
+                        app:icon ="@drawable/ic_github"
+
+                        android:text="GitHub"
+                        android:textSize="16dp"
+
+                         />
+
+                    <Button
+                        android:id="@+id/btn_gmail"
+                        android:layout_width="@dimen/btn_width"
+                        android:layout_height="wrap_content"
+                        android:text="Gmail"
+                        app:icon="@drawable/ic_email"
+
+                        style="@style/Widget.Material3.Button.Icon"
+                        android:textSize="16dp"
+                       />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
-
