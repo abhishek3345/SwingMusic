@@ -43,7 +43,7 @@ public class SwingHomePage extends AppCompatActivity  {
         //Vertical Navigation Bar
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_lay);
-        NavigationView navigationView = findViewById(R.id.ver_nav_view); // This is one is the side bar!
+        NavigationView navigationView = findViewById(R.id.ver_nav_view);
 
         View headerView = navigationView.getHeaderView(0);
 
@@ -70,7 +70,7 @@ public class SwingHomePage extends AppCompatActivity  {
                 }
 
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    // Handle error
+
                 }
             });
         } else {

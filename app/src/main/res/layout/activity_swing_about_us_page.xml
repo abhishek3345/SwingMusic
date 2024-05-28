@@ -38,7 +38,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                app:srcCompat="@drawable/app_logo_black"
+                app:srcCompat="@drawable/app_logo"
                 />
 
             <TextView
