@@ -1,2 +1,8 @@
 ![Screenshot_2024-05-24-09-56-30-008_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/96e726c6-5a0b-4fae-9c20-28300a4ccd13)
 ![Screenshot_2024-03-14-15-32-31-863_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/d67dad1d-7c84-4db5-9986-9977b7114126)
+![Screenshot_2024-05-24-09-57-41-038_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/22bbb57b-870d-4add-a11e-ec4295977954)
+![Screenshot_2024-05-24-09-55-27-449_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/bb56e269-cc27-4b35-a3cf-ca36a89d8caf)
+![Screenshot_2024-05-24-09-54-35-296_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/14578d86-9fc0-49b3-bdf5-6bc0d93ac5ef)
+![Screenshot_2024-05-24-09-54-11-996_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/e9ed2e61-5b14-48e5-a93e-1e2f68ef8559)
+![Screens-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/e27771bd-f2d1-4352-bebe-dbf1f7d28c3f)
+![Screenshot_2024-05-27-08-19-54-827_com-portrait](https://github.com/abhishek3345/SwingMusic/assets/98174905/8cdc00e6-52be-410b-9ed7-7486df83f81a)
